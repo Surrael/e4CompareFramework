@@ -10,6 +10,9 @@ public class FeatureUtil {
 	
 	public static IFeature toFeature(Cluster cluster) {
 		Feature feature = new Feature(cluster.getName());
+		// Feature defaults to abstract, but synthesized clusters are concrete when
+		// they represent model artifacts. Empty synthetic clusters are abstract.
+		feature.setAbstract(cluster.isAbstract());
 		feature.setColor(cluster.getSyntaxGroup().getColor());
 		feature.getConfigurations().addAll(cluster.getSyntaxGroup().getConfigurations());
 		feature.getArtifactUUIDs().addAll(cluster.getSyntaxGroup().getUuids());

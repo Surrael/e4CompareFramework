@@ -33,4 +33,5 @@ Export-Package: de.tu_bs.cs.isf.e4cf.extractive_mple.consts
 Export-Package: de.tu_bs.cs.isf.e4cf.extractive_mple.consts,
  de.tu_bs.cs.isf.e4cf.extractive_mple.structure
 Bundle-ClassPath: lib/opencsv-3.8.jar,
+Bundle-ClassPath: lib/gson-2.8.2.jar,
  .

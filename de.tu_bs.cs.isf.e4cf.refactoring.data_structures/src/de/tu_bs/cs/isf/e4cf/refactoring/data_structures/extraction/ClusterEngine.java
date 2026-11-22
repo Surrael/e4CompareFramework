@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -15,6 +16,8 @@ import java.util.Set;
 
 import javax.inject.Singleton;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.e4.core.di.annotations.Creatable;
 
@@ -44,32 +47,42 @@ public class ClusterEngine {
 	public static final String BUNDLE_NAME = "de.tu_bs.cs.isf.e4cf.refactoring.data_structures";
 
 	public ClusterEngine() {
+		scriptPathExe = resolveBundleFile("script/clustering_sklearn.exe");
+		scriptPathPython = resolveBundleFile("script/clustering_sklearn.py");
+		compareEngine = new CompareEngineHierarchical(new SortingMatcher(), new MetricImpl("test"));
+	}
+
+	private static volatile ProcessUtil process;
+
+	private static String resolveBundleFile(String bundleRelativePath) {
 		try {
-			Path pathExe = new Path("/script/clustering_sklearn.exe");
-			Path pathPy = new Path("/script/clustering_sklearn.py");
-
-			scriptPathExe = new File((ClusterEngine.class.getProtectionDomain().getCodeSource().getLocation().getPath()
-					+ "script/clustering_sklearn.exe").substring(1)).getPath();
-			scriptPathPython = new File(
-					(ClusterEngine.class.getProtectionDomain().getCodeSource().getLocation().getPath()
-							+ "script/clustering_sklearn.py").substring(1)).getPath();
-
-			compareEngine = new CompareEngineHierarchical(new SortingMatcher(), new MetricImpl("test"));
+			URL bundleEntry = FileLocator.find(Platform.getBundle(BUNDLE_NAME), new Path(bundleRelativePath), null);
+			if (bundleEntry == null) {
+				throw new IOException("Bundle entry was not found: " + bundleRelativePath);
+			}
+			URL localFile = FileLocator.toFileURL(bundleEntry);
+			return new File(localFile.toURI()).getAbsolutePath();
 		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("no clustering available");
+			throw new IllegalStateException("Could not resolve clustering resource " + bundleRelativePath, e);
 		}
 	}
 
-	private static ProcessUtil process;
-
-	public static void startProcess() {
-		if (process == null) {
-			process = new ProcessUtil();
-			if (PYTHON) {
-				process.startProcess(scriptPathPython, true);
-			} else {
-				process.startProcess(scriptPathExe, false);
+	public static synchronized void startProcess() {
+		if (process == null || !process.isReady()) {
+			ProcessUtil newProcess = new ProcessUtil();
+			try {
+				if (PYTHON) {
+					newProcess.startProcess(scriptPathPython, true);
+				} else {
+					newProcess.startProcess(scriptPathExe, false);
+				}
+				if (!newProcess.isReady()) {
+					throw new IOException("Clustering process exited during startup.");
+				}
+				process = newProcess;
+			} catch (IOException e) {
+				throw new IllegalStateException("Could not start clustering process: "
+						+ (PYTHON ? scriptPathPython : scriptPathExe), e);
 			}
 		}
 	}
@@ -102,6 +115,10 @@ public class ClusterEngine {
 			}
 
 			String[] results = getClusterResults(distanceString);
+			if (results.length != nodes.size()) {
+				throw new IllegalStateException("Clustering returned " + results.length + " labels for "
+						+ nodes.size() + " candidate artifacts.");
+			}
 
 			Iterator<Node> iterator = nodes.iterator();
 			Map<Integer, Set<Node>> map = new HashMap<Integer, Set<Node>>();
@@ -120,14 +137,15 @@ public class ClusterEngine {
 			return clusters;
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new IllegalStateException("Could not read clustering results.", e);
 		}
-
-		return null;
 
 	}
 
 	private String[] getClusterResults(String distanceString) throws IOException {
+		if (process == null || !process.isReady()) {
+			throw new IOException("The clustering process is not running.");
+		}
 		String thresholdString = "";
 		thresholdString += THRESHOLD;
 		BufferedWriter writer = process.getWriter();
@@ -135,6 +153,9 @@ public class ClusterEngine {
 		writer.write(distanceString + " " + thresholdString + "\r\n");
 		writer.flush();
 		String line = reader.readLine();
+		if (line == null) {
+			throw new IOException("The clustering process closed its output without returning labels.");
+		}
 		reader.readLine();
 		String[] results = line.split(",");
 		return results;
@@ -150,6 +171,10 @@ public class ClusterEngine {
 				return clusters;
 			}
 			String[] results = getClusterResults(distanceString);
+			if (results.length != nodes.size()) {
+				throw new IllegalStateException("Clustering returned " + results.length + " labels for "
+						+ nodes.size() + " candidate components.");
+			}
 			Iterator<MultiSetTree> iterator = nodes.iterator();
 			Map<Integer, Set<MultiSetTree>> map = new HashMap<Integer, Set<MultiSetTree>>();
 
@@ -167,10 +192,8 @@ public class ClusterEngine {
 			return clusters;
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			throw new IllegalStateException("Could not read component clustering results.", e);
 		}
-
-		return null;
 
 	}
 

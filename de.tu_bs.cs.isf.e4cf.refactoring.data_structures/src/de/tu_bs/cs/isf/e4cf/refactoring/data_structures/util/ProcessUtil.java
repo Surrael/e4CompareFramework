@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.File;
 
 public class ProcessUtil {
 
@@ -16,26 +17,19 @@ public class ProcessUtil {
 	private Process process;
 	
 
-	public void startProcess(String path, boolean isPython) {
-		try {
-
-			ProcessBuilder builder = null;
-			if (!isPython) {
-				builder = new ProcessBuilder(path);
-			} else {
-				builder = new ProcessBuilder("py", path);
-			}
-
-			builder.redirectErrorStream(true);
-			process = builder.start();
-			InputStream inputStream = process.getInputStream();
-			reader = new BufferedReader(new InputStreamReader(inputStream));
-			OutputStream outputStream = process.getOutputStream();
-			writer = new BufferedWriter(new OutputStreamWriter(outputStream));
-			isProcessReady = true;
-		} catch (IOException e) {
-			e.printStackTrace();
+	public synchronized void startProcess(String path, boolean isPython) throws IOException {
+		if (path == null || !new File(path).isFile()) {
+			throw new IOException("Clustering executable or script does not exist: " + path);
 		}
+
+		ProcessBuilder builder = isPython ? new ProcessBuilder("py", path) : new ProcessBuilder(path);
+		builder.redirectErrorStream(true);
+		process = builder.start();
+		InputStream inputStream = process.getInputStream();
+		reader = new BufferedReader(new InputStreamReader(inputStream));
+		OutputStream outputStream = process.getOutputStream();
+		writer = new BufferedWriter(new OutputStreamWriter(outputStream));
+		isProcessReady = true;
 	}
 
 	public BufferedReader getReader() {
@@ -47,11 +41,13 @@ public class ProcessUtil {
 	}
 
 	public boolean isReady() {
-		return isProcessReady;
+		return isProcessReady && process != null && process.isAlive();
 	}
 
 	public void stop() {
-		process.destroyForcibly();
+		if (process != null) {
+			process.destroyForcibly();
+		}
 	}
 
 }

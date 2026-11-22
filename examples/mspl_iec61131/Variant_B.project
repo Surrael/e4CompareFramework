@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<C:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:C="http://www.example.org/ppuIECScenario/config"
+    xmlns:ST="http://www.example.org/ppuIECScenario/ST"
+    xmlns:STE="http://www.example.org/ppuIECScenario/STE" identifier="CODESYS_MSPL_Variant_B">
+  <resources name="PLC">
+    <pous identifier="CommonRoutineB1" type="PROGRAM">
+      <declaration/>
+      <implementations xsi:type="ST:StructuredText" xmi:id="st2a" label="CommonRoutineB1" text="OutValue0 := InValue0 + 1;
+OutValue1 := InValue1 + 1;
+OutValue2 := InValue2 + 1;
+OutValue3 := InValue3 + 1;
+OutValue4 := InValue4 + 1;
+OutValue5 := InValue5 + 1;
+OutValue6 := InValue6 + 1;
+OutValue7 := InValue7 + 1;
+OutValue8 := InValue8 + 1;
+OutValue9 := InValue9 + 1;
+OutValue10 := InValue10 + 1;
+OutValue11 := InValue11 + 1;
+OutValue12 := InValue12 + 1;
+OutValue13 := InValue13 + 1;
+OutValue14 := InValue14 + 1;
+OutValue15 := InValue15 + 1;
+OutValue16 := InValue16 + 1;
+OutValue17 := InValue17 + 1;
+OutValue18 := InValue18 + 1;
+OutValue19 := InValue19 + 1;
+OutValue20 := InValue20 + 1;
+OutValue21 := InValue21 + 1;">
+      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue0"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue0"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue1"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue1"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue2"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue2"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue3"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue3"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue4"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue4"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue5"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue5"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue6"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue6"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue7"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue7"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue8"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue8"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue9"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue9"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue10"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue10"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue11"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue11"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue12"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue12"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue13"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue13"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue14"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue14"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue15"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue15"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue16"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue16"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue17"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue17"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue18"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue18"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue19"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue19"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue20"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue20"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2a">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue21"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue21"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>
+      </implementations>
+    </pous>
+    <pous identifier="CommonRoutineB2" type="PROGRAM">
+      <declaration/>
+      <implementations xsi:type="ST:StructuredText" xmi:id="st2b" label="CommonRoutineB2" text="OutValue0 := InValue0 + 1;
+OutValue1 := InValue1 + 1;
+OutValue2 := InValue2 + 1;
+OutValue3 := InValue3 + 1;
+OutValue4 := InValue4 + 1;
+OutValue5 := InValue5 + 1;
+OutValue6 := InValue6 + 1;
+OutValue7 := InValue7 + 1;
+OutValue8 := InValue8 + 1;
+OutValue9 := InValue9 + 1;
+OutValue10 := InValue10 + 1;
+OutValue11 := InValue11 + 1;
+OutValue12 := InValue12 + 1;
+OutValue13 := InValue13 + 1;
+OutValue14 := InValue14 + 1;
+OutValue15 := InValue15 + 1;
+OutValue16 := InValue16 + 1;
+OutValue17 := InValue17 + 1;
+OutValue18 := InValue18 + 1;
+OutValue19 := InValue19 + 1;
+OutValue20 := InValue20 + 1;
+OutValue21 := InValue21 + 1;">
+      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue0"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue0"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue1"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue1"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue2"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue2"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue3"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue3"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue4"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue4"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue5"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue5"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue6"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue6"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue7"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue7"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue8"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue8"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue9"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue9"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue10"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue10"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue11"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue11"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue12"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue12"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue13"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue13"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue14"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue14"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue15"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue15"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue16"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue16"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue17"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue17"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue18"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue18"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue19"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue19"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue20"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue20"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2b">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue21"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue21"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>
+      </implementations>
+    </pous>
+    <pous identifier="VariantSpecificB" type="PROGRAM">
+      <declaration/>
+      <implementations xsi:type="ST:StructuredText" xmi:id="st2v" label="VariantSpecificB" text="OutValue0 := InValue0 + 1;
+OutValue1 := InValue1 + 1;
+OutValue2 := InValue2 + 1;
+OutValue3 := InValue3 + 1;
+OutValue4 := InValue4 + 1;
+OutValue5 := InValue5 + 1;
+OutValue6 := InValue6 + 1;
+OutValue7 := InValue7 + 1;
+OutValue8 := InValue8 + 1;
+OutValue9 := InValue9 + 1;
+OutValue10 := InValue10 + 1;
+OutValue11 := InValue11 + 1;
+OutValue12 := InValue12 + 1;
+OutValue13 := InValue13 + 1;
+OutValue14 := InValue14 + 1;
+OutValue15 := InValue15 + 1;
+OutValue16 := InValue16 + 1;
+OutValue17 := InValue17 + 1;
+OutValue18 := InValue18 + 1;
+OutValue19 := InValue19 + 1;
+OutValue20 := InValue20 + 1;
+OutValue21 := InValue21 + 1;
+Variant2Output := 2;">
+      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue0"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue0"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue1"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue1"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue2"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue2"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue3"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue3"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue4"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue4"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue5"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue5"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue6"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue6"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue7"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue7"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue8"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue8"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue9"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue9"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue10"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue10"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue11"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue11"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue12"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue12"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue13"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue13"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue14"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue14"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue15"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue15"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue16"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue16"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue17"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue17"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue18"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue18"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue19"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue19"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue20"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue20"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="OutValue21"/>
+        <right xsi:type="STE:BinaryExpression" dataType="DINT" expressionType="BINARY" operator="ADD">
+          <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="InValue21"/>
+          <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="1"/>
+        </right>
+      </statements>      <statements xsi:type="ST:Assignment" structuredText="#st2v">
+        <left xsi:type="STE:VariableExpression" dataType="DINT" expressionType="VARIABLE" Symbol="Variant2Output"/>
+        <right xsi:type="STE:Literal" dataType="DINT" expressionType="LITERAL" symbol="2"/>
+      </statements>
+      </implementations>
+    </pous>
+  </resources>
+</C:Configuration>

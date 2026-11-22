@@ -269,6 +269,7 @@ public class MPLPlatform implements Serializable {
 	private List<CloneConfiguration> refactorComponents(Node node) {
 		LocalTime start = LocalTime.now();
 		List<CloneConfiguration> componentConfigs = new ArrayList<CloneConfiguration>();
+		int candidateCount = 0;
 		try {
 			// Get all nodes of the selected type
 			List<Node> candidatNodes = node.getNodesOfType(prefs.getGranularityLevel());
@@ -279,6 +280,13 @@ public class MPLPlatform implements Serializable {
 				if (node2.getAmountOfNodes(0) < prefs.getCloneSize()) {
 					candiateIterator.remove();
 				}
+			}
+			candidateCount = candidatNodes.size();
+			if (candidateCount < 2) {
+				System.out.println("Intra-variant clone detection skipped: granularity '"
+						+ prefs.getGranularityLevel() + "' and clone size " + prefs.getCloneSize() + " left "
+						+ candidateCount + " candidate artifacts; at least 2 are required.");
+				return componentConfigs;
 			}
 			// Initialize the cluster engine and run the process output is a list of sets
 			// of nodes. Every set represents a clone cluster that has to be merged.
@@ -323,7 +331,10 @@ public class MPLPlatform implements Serializable {
 				}
 			}
 		} catch (Exception e) {
-			System.out.println("Multi Product Line Extraction not avalable in this version");
+			System.err.println("Intra-variant clone detection failed for granularity '"
+					+ prefs.getGranularityLevel() + "', clone size " + prefs.getCloneSize() + ", and "
+					+ candidateCount + " candidate artifacts.");
+			e.printStackTrace();
 		}
 		if (isEvaluation) {
 			printTime(start, "intra variability mining");
