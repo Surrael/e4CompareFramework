@@ -108,7 +108,6 @@ public class TabController {
 		// services.partService.showPart(FDStringTable.CONSTRAINT_VIEW);
 		services.eventBroker.send(FDEventTable.SHOW_CONSTRAINT_EVENT, diagram);
 		newTab.editor().setFeatureDiagram(diagram);
-		view.addTab(newTab);
 	}
 
 	public FeatureDiagram getCurrentFeatureDiagram() {

@@ -124,6 +124,11 @@ public class MPLEditorController implements Initializable {
 	@Optional
 	@Inject
 	public void selectNextOccurrence(@UIEventTopic(MPLEEditorConsts.SELECT_NEXT) IFeature feature) {
+		services.partService.showPart(MPLEEditorConsts.TREE_VIEW_ID);
+		if (currentPlatform != null && currentPlatform.getFeatureModel() != null
+				&& currentPlatform.getFeatureModel().isPresent()) {
+			displayFeatures(currentPlatform.getFeatureModel().get().getAllFeatures());
+		}
 		selector.selectNextTreeItem(feature.getArtifactUUIDs());
 	}
 
@@ -138,7 +143,7 @@ public class MPLEditorController implements Initializable {
 			ColoredTreeItem item = new ColoredTreeItem(node, Color.WHITE);
 			ContextInjectionFactory.inject(item, services.context);
 			for (IFeature feature : features) {
-				if (feature.getArtifactUUIDs().contains(node.getUUID())) {
+				if (!java.util.Collections.disjoint(feature.getArtifactUUIDs(), node.getUUIDsForNode())) {
 					item.setColor(feature.getColor().orElseGet(() -> Color.WHITE));
 				}
 			}

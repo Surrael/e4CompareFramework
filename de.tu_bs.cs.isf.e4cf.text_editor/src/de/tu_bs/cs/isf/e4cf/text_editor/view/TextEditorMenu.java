@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.stream.Stream;
 
-import org.apache.commons.lang3.StringUtils;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.InvalidRegistryObjectException;
 import org.eclipse.swt.SWT;
@@ -318,17 +317,17 @@ public class TextEditorMenu implements Initializable {
 		String origText = codeArea.getText();
 
 		// Separates the points before and after the inserted text's position
-		String firstPart = StringUtils.substring(origText, 0, range.getStart());
-		String lastPart = StringUtils.substring(origText, range.getEnd(), StringUtils.length(origText));
+		String firstPart = origText.substring(0, range.getStart());
+		String lastPart = origText.substring(range.getEnd(), origText.length());
 
 		// puts together the new String
 		updatedText = firstPart + pasteText + lastPart;
 
 		// checks for where to put the cursor after adding text in
 		if (range.getStart() == range.getEnd()) {
-			endPos = range.getEnd() + StringUtils.length(pasteText);
+			endPos = range.getEnd() + pasteText.length();
 		} else {
-			endPos = range.getStart() + StringUtils.length(pasteText);
+			endPos = range.getStart() + pasteText.length();
 		}
 
 		codeArea.replaceText(updatedText);

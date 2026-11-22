@@ -54,15 +54,21 @@ public class ReaderManager {
 			ArtifactReader reader = ArtifactIOUtil.getReaderForType(fte, context);
 
 			if (reader != null) {
-				Node node = reader.readArtifact(fte).getRoot();
-				return node;
-			} else {
-				// store files that can't be processed as files
-				Node fileNode = new NodeImpl(NodeType.FILE);
-				fileNode.addAttribute("FILE_NAME", new StringValueImpl(fte.getFileName()));
-				fileNode.addAttribute("FILE_EXTENSION", new StringValueImpl(fte.getExtension()));
-				return fileNode;
+				try {
+					Tree artifact = reader.readArtifact(fte);
+					if (artifact != null && artifact.getRoot() != null) {
+						return artifact.getRoot();
+					}
+				} catch (RuntimeException e) {
+					e.printStackTrace();
+				}
 			}
+
+			// Keep unsupported or unparseable files visible in the tree.
+			Node fileNode = new NodeImpl(NodeType.FILE);
+			fileNode.addAttribute("FILE_NAME", new StringValueImpl(fte.getFileName()));
+			fileNode.addAttribute("FILE_EXTENSION", new StringValueImpl(fte.getExtension()));
+			return fileNode;
 		}
 	}
 

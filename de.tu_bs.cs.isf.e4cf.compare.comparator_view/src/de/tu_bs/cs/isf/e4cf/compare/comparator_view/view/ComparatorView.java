@@ -2,7 +2,6 @@ package de.tu_bs.cs.isf.e4cf.compare.comparator_view.view;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -10,10 +9,6 @@ import java.util.ResourceBundle;
 import java.util.Set;
 
 import javax.inject.Inject;
-
-import org.eclipse.fx.ui.controls.tree.FilterableTreeItem;
-import org.eclipse.fx.ui.controls.tree.TreeItemPredicate;
-import org.eclipse.fx.ui.controls.tree.TreeTableViewUtil;
 
 import de.tu_bs.cs.isf.e4cf.compare.comparator.impl.node.StringComparator;
 import de.tu_bs.cs.isf.e4cf.compare.comparator.interfaces.Comparator;
@@ -23,7 +18,6 @@ import de.tu_bs.cs.isf.e4cf.compare.comparator_view.components.ComparatorCell;
 import de.tu_bs.cs.isf.e4cf.compare.metric_view.components.FXComparatorElement;
 import de.tu_bs.cs.isf.e4cf.compare.metric_view.stringtable.MetricST;
 import de.tu_bs.cs.isf.e4cf.core.util.ServiceContainer;
-import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -60,6 +54,8 @@ public class ComparatorView implements Initializable {
 	
 	@FXML
 	private TextField filterField;
+
+	private List<FXComparatorElement> allComparatorElements = new ArrayList<>();
 
 	/**
 	 * this method loads on click the ComparatorTree
@@ -146,42 +142,41 @@ public class ComparatorView implements Initializable {
 		
  		
 		treeTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-		FilterableTreeItem<FXComparatorElement> root = new FilterableTreeItem<>(new FXComparatorElement("root"));
-		
-		Set<String> availableTypes = new HashSet<>();
-		getFxComparatorElements().forEach(elem -> {
-			availableTypes.add(elem.getComparatorType());
+		allComparatorElements = getFxComparatorElements();
+		treeTable.setRoot(buildTree(filterField.getText()));
+		filterField.textProperty().addListener((obs, oldValue, newValue) -> {
+			treeTable.setRoot(buildTree(newValue));
 		});
-		
-		availableTypes.forEach(elem -> {
-			FilterableTreeItem<FXComparatorElement> subRootNode = new FilterableTreeItem(new FXComparatorElement(elem));
-			root.getInternalChildren().add(subRootNode);
-			subRootNode.setExpanded(true);
-		});
-		
-		
-		getFxComparatorElements().forEach(elem -> {
-			root.getInternalChildren().forEach(child -> {				
-				if (child.getValue().getComparatorType().equals(elem.getComparatorType())) {
-					((FilterableTreeItem) child).getInternalChildren().add(new FilterableTreeItem<>(elem));
-				}
-			}); 
-
-		});
-		
-		root.predicateProperty().bind(Bindings.createObjectBinding(() -> {
-			if (filterField.getText() == null || filterField.getText().isEmpty()) {
-				return null;
-			}
-			return TreeItemPredicate.create(elem -> (elem.getName().contains(filterField.getText().toUpperCase())
-					|| elem.getName().contains(filterField.getText().toLowerCase())
-					|| elem.getName().contains(filterField.getText())));
-		}, filterField.textProperty()));
-		
-		treeTable.setRoot(root);
-		root.setExpanded(true);
 		treeTable.setShowRoot(false);
 		
+	}
+
+	private TreeItem<FXComparatorElement> buildTree(String filterText) {
+		TreeItem<FXComparatorElement> root = new TreeItem<>(new FXComparatorElement("root"));
+		Map<String, TreeItem<FXComparatorElement>> typeNodes = new java.util.HashMap<>();
+		Set<String> availableTypes = new HashSet<>();
+		String normalizedFilter = filterText == null ? "" : filterText.trim().toLowerCase();
+
+		allComparatorElements.forEach(elem -> availableTypes.add(elem.getComparatorType()));
+		availableTypes.forEach(type -> {
+			TreeItem<FXComparatorElement> subRootNode = new TreeItem<>(new FXComparatorElement(type));
+			subRootNode.setExpanded(true);
+			typeNodes.put(type, subRootNode);
+			root.getChildren().add(subRootNode);
+		});
+
+		allComparatorElements.forEach(elem -> {
+			if (normalizedFilter.isEmpty() || elem.getName().toLowerCase().contains(normalizedFilter)) {
+				TreeItem<FXComparatorElement> parent = typeNodes.get(elem.getComparatorType());
+				if (parent != null) {
+					parent.getChildren().add(new TreeItem<>(elem));
+				}
+			}
+		});
+
+		root.getChildren().removeIf(typeNode -> typeNode.getChildren().isEmpty());
+		root.setExpanded(true);
+		return root;
 	}
 	
 	private FXComparatorElement createElement(Comparator comparator) {

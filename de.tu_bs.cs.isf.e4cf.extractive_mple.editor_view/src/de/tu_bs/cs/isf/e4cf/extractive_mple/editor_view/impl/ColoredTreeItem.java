@@ -34,7 +34,7 @@ public class ColoredTreeItem extends StylableTreeItem {
 		row.setBackground(new Background(new BackgroundFill(this.color, null, null)));
 		row.getChildrenUnmodifiable().forEach(child -> {
 			if (color != null)
-				if (0.299 * color.getRed() + 0.587 * color.getGreen() + 0.114 * color.getBlue() <= 128) {
+				if (0.299 * color.getRed() + 0.587 * color.getGreen() + 0.114 * color.getBlue() <= 0.5) {
 					child.setStyle("-fx-text-fill:whitesmoke;");
 				} else {
 					child.setStyle("-fx-text-fill:black;");

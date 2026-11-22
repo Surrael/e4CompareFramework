@@ -4,6 +4,7 @@
 		<accessrules>
 			<accessrule kind="accessible" pattern="javax/**"/>
 			<accessrule kind="accessible" pattern="org/**"/>
+			<accessrule kind="accessible" pattern="*"/>
 		</accessrules>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins">

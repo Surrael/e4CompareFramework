@@ -10,7 +10,6 @@ Require-Bundle: org.eclipse.e4.ui.di,
  org.eclipse.e4.core.di.annotations,
  org.eclipse.e4.ui.model.workbench,
  de.tu_bs.cs.isf.e4cf.compare,
- org.eclipse.fx.ui.controls,
  org.eclipse.e4.core.services,
  de.tu_bs.cs.isf.e4cf.core
 Automatic-Module-Name: de.tu.bs.cs.isf.e4cf.compare.metric.view

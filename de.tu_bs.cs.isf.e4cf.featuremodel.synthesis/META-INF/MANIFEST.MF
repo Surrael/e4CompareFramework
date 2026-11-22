@@ -21,6 +21,7 @@ Require-Bundle: javax.inject;bundle-version="1.0.0",
  de.tu_bs.cs.isf.e4cf.extractive_mple;bundle-version="1.0.0",
  de.tu_bs.cs.isf.e4cf.compare.data_structures;bundle-version="1.0.0",
  de.tu_bs.cs.isf.e4cf.compare;bundle-version="1.0.0",
+ de.tu_bs.cs.isf.e4cf.extractive_mple_platform_view;bundle-version="1.0.0",
  de.tu_bs.cs.isf.e4cf.parts.project_explorer;bundle-version="1.0.0",
  de.tu_bs.cs.isf.e4cf.featuremodel.core;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy

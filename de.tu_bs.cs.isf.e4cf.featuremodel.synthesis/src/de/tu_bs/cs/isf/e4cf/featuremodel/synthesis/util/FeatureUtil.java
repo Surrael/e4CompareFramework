@@ -10,6 +10,7 @@ public class FeatureUtil {
 	
 	public static IFeature toFeature(Cluster cluster) {
 		Feature feature = new Feature(cluster.getName());
+		feature.setAbstract(cluster.isAbstract());
 		feature.setColor(cluster.getSyntaxGroup().getColor());
 		feature.getConfigurations().addAll(cluster.getSyntaxGroup().getConfigurations());
 		feature.getArtifactUUIDs().addAll(cluster.getSyntaxGroup().getUuids());
