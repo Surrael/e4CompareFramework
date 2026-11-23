@@ -348,6 +348,17 @@ public class MPLEPlatformController implements Initializable {
 		MPLEPlatformUtil.storePlatform(currentPlatform.location, currentPlatform);
 	}
 
+		@FXML
+	private void storeCurrentPlatformGson() {
+		if (currentPlatform.location.equals("")) {
+			String name = RCPMessageProvider.inputDialog("Platform View", "Enter Name for Current Platform.");
+			currentPlatform.location = services.workspaceFileSystem.getWorkspaceDirectory().getAbsolutePath() + "//"
+					+ name + ".mpl";
+		}
+
+		MPLEPlatformUtil.storePlatformGson(currentPlatform.location, currentPlatform);
+	}
+
 	@FXML
 	private void printDetails() {
 		if (currentPlatform != null && currentPlatform.model != null) {

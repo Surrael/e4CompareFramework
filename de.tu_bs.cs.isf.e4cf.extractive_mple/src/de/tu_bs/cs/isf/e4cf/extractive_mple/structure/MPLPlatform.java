@@ -310,7 +310,7 @@ public class MPLPlatform implements Serializable {
 				clusterSet.remove(mergeTarget);
 				// create configuration of the merge target component node.
 				CloneConfiguration firstConfig = NodeConfigurationUtil.createCloneConfiguration(mergeTarget,
-						mergeTarget.getParent().getUUID());
+						getParentUUID(mergeTarget));
 				componentConfigs.add(firstConfig);
 
 				for (Node clusterNode : clusterSet) {
@@ -327,7 +327,7 @@ public class MPLPlatform implements Serializable {
 						clusterNode.getParent().getChildren().add(mergeTarget);
 
 					componentConfigs.add(NodeConfigurationUtil.createCloneConfiguration(clusterNode,
-							clusterNode.getParent().getUUID()));
+							getParentUUID(clusterNode)));
 				}
 			}
 		} catch (Exception e) {
@@ -341,6 +341,15 @@ public class MPLPlatform implements Serializable {
 		}
 
 		return componentConfigs;
+	}
+
+	private UUID getParentUUID(Node node) {
+		Node parent = node.getParent();
+		if (parent == null) {
+			throw new IllegalStateException("Cannot create a clone configuration for node " + node.getUUID()
+					+ " (" + node.getNodeType() + ") because its parent reference is missing.");
+		}
+		return parent.getUUID();
 	}
 
 	private void printTime(LocalTime start, String task) {

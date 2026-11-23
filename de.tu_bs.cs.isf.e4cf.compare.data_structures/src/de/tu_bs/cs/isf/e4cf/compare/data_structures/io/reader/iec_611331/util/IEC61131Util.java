@@ -52,7 +52,19 @@ public class IEC61131Util {
 		node.addAttribute(NodeBuilder.createAttribute("identifier", config.getIdentifier()));
 		node.getChildren().add(createGlobalVarNode(config.getGlobalVariables()));
 		node.getChildren().add(createRessourceNode(config.getResources()));
+		initializeParentReferences(node);
 		return node;
+	}
+
+	/**
+	 * The IEC tree is assembled through direct child-list additions. Restore the
+	 * parent links required by clone configuration creation and UUID propagation.
+	 */
+	private static void initializeParentReferences(Node parent) {
+		for (Node child : parent.getChildren()) {
+			child.setParent(parent);
+			initializeParentReferences(child);
+		}
 	}
 
 	private static Node createRessourceNode(EList<Resource> resources) {
